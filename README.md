@@ -25,10 +25,10 @@
 <hr>
 
 ### 7. State that handled the covid most efficiently( total recovery/ total covid cases).
-<img width="1433" alt="Screenshot 2023-03-28 at 5 35 04 PM" src="https://user-images.githubusercontent.com/77565294/228233094-df0d0e23-ccf1-47ba-bc11-695230628961.png">
+<img width="800" alt="Screenshot 2023-03-28 at 5 35 04 PM" src="https://user-images.githubusercontent.com/77565294/228233094-df0d0e23-ccf1-47ba-bc11-695230628961.png">
 <hr>
 
 ### 8. State that handled the covid least efficiently( total recovery/ total covid cases)
-<img width="1433" alt="Screenshot 2023-03-28 at 5 45 04 PM" src="https://user-images.githubusercontent.com/77565294/228233569-f877d531-4d1b-4015-97be-700402638555.png">
+<img width="800" alt="Screenshot 2023-03-28 at 5 45 04 PM" src="https://user-images.githubusercontent.com/77565294/228233569-f877d531-4d1b-4015-97be-700402638555.png">
 <hr>
 
