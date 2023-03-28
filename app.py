@@ -68,7 +68,7 @@ def get_most_efficient_state():
 def get_least_efficient_state():
     ans=spark.sql("SELECT state, cured/confirm AS ans FROM data").orderBy("ans",ascending=True).select("state").limit(1).collect()
     least_efficient_state=ans[0][0]
-    return jsonify({'most efficient_state':least_efficient_state})
+    return jsonify({'least efficient_state':least_efficient_state})
 
 if __name__ == '__main__':
     app.run(debug=True)

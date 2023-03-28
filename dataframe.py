@@ -4,8 +4,7 @@ from pyspark.sql.types import *
 from pyspark.sql.functions import *
 import requests
 import json
-from pprint import pprint
- 
+from config import KEY
 spark = SparkSession.builder.master("local[2]").appName("pySpark").getOrCreate()
 sc = spark.sparkContext
 sc.setLogLevel("ERROR")
@@ -14,7 +13,7 @@ def getDataFromUrl():
     # API details
     url = "https://covid-19-india2.p.rapidapi.com/details.php"
     headers = {
-        "X-RapidAPI-Key": "c9e2d1ac29msh6db3716b8936720p130e98jsn133760918f82",
+        "X-RapidAPI-Key": KEY,
         "X-RapidAPI-Host": "covid-19-india2.p.rapidapi.com"
     }
     response = requests.request("GET", url, headers=headers)
