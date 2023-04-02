@@ -28,7 +28,7 @@ def trimCheck(state):
     
 
 def cleanData(jsonResponse):
-    data=[]
+    data=[] # convering the response to list of lists
     for state in jsonResponse:
         l=[]
         dataValues=jsonResponse[state]
@@ -40,15 +40,15 @@ def cleanData(jsonResponse):
     data.pop()      
     data.pop()
     for val in data:
-        val[2]=int(val[2])
+        val[2]=int(val[2]) # converting the the following to integer
         val[3]=int(val[3])
-        val[1]=trimCheck(val[1])
+        val[1]=trimCheck(val[1]) # removing the * from some states
         
     return data
     
 def getDataFrame(data):    
     rdd=sc.parallelize(data,numSlices=2)
-    rowRdd=rdd.map( lambda x: Row(x[0],x[1],x[2],x[3],x[4],x[5]))
+    rowRdd=rdd.map( lambda x: Row(x[0],x[1],x[2],x[3],x[4],x[5])) # converting to row rdd.
     schema= (StructType()
                 .add(StructField("slno",IntegerType(),False))
                 .add(StructField("state",StringType(),False))
