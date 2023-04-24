@@ -1,0 +1,13 @@
+Ashish's code review 
+
+- Code retrieves COVID-19 data from an API, cleans it, analyzes it using PySpark, and creates a RESTful API to display the analyzed results.
+
+   - The APIPipeline class loads data from the API, cleans it, and stores it in a cleaned format. It has two methods: loadData and cleanData. The loadData method retrieves data from the API using the requests library, and the cleanData method cleans the data by removing empty keys and values, removing the "lastupdated" key and value, removing the * from state names, and converting the data types of the confirm and cured columns to integers.
+   
+   - The DataAnalysis class analyzes the cleaned data using PySpark and stores the results. It has three methods: loadData, createDataFrame, and doAnalysis. The loadData method receives the cleaned data from the APIPipeline class and stores it in a variable called data. The createDataFrame method creates a PySpark DataFrame from the data variable, and the doAnalysis method analyzes the data using PySpark SQL and stores the results in a dictionary called answers.
+    
+   - The FlaskAPI class creates a RESTful API that displays the results of the analysis. It has one method: showData. The showData method creates a Flask route that displays the analyzed data when the API is accessed.
+
+- The analysis includes finding the most affected state, the least affected state, the state with the highest number of COVID cases, the state with the lowest number of COVID cases, the total number of COVID cases in the country, the most efficient state, the least efficient state, the least suffered state, and the most suffered state.
+
+- The analyzed data is displayed in a JSON format when the API is accessed.
