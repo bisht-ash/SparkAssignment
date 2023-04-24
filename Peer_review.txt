@@ -11,3 +11,20 @@ Ashish's code review
 - The analysis includes finding the most affected state, the least affected state, the state with the highest number of COVID cases, the state with the lowest number of COVID cases, the total number of COVID cases in the country, the most efficient state, the least efficient state, the least suffered state, and the most suffered state.
 
 - The analyzed data is displayed in a JSON format when the API is accessed.
+
+Ayush's code review
+
+- The Process class is defined, which encapsulates the data processing logic. It has several private methods prefixed with double underscores (__) that are only accessible within the class. It also has three class variables (dataDF, affectedDF, and handleDF) initialized to None.
+
+- The __sanitise method takes a state string and removes any trailing asterisks (*) if present. It returns the sanitized state string.
+
+- The __load_dataset method takes an API key and sends a GET request to a COVID-19 data API. It retrieves the response data and converts it to a Python dictionary object. It then iterates over the dictionary items and extracts relevant data for each state. It sanitizes the state name and converts other data values to integer type. Finally, it returns a list of data items.
+
+- The __create_dataframe method takes a dataList list and creates a PySpark DataFrame using the SparkSession object. It defines a schema with five columns (SNo, State, Confirm, Cured, Death, and Total) and assigns it to the DataFrame. It then creates rows from the input data list and adds them to the DataFrame.
+
+- The __load_dataframe method loads the API key from a .env file using the load_dotenv method from the dotenv module. It then calls the __load_dataset and __create_dataframe methods to create the dataDF DataFrame.
+
+- The __create_affected_df method creates a new DataFrame (affectedDF) from dataDF by adding a new column called Affected, which represents the death rate as a ratio of total cases. It uses the withColumn method and PySpark DataFrame API to add the new column.
+
+- The __create_handled_df method creates a new DataFrame (handleDF) from dataDF by adding a new column called Handled, which represents the recovery rate as a ratio of total cases. It uses the withColumn method and PySpark DataFrame API to add the new column.
+
